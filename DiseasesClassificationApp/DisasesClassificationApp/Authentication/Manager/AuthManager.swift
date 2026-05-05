@@ -6,30 +6,28 @@
 //
 
 import Foundation
+import Combine
 
-actor AuthManager {
+class AuthManager: ObservableObject {
     static let shared = AuthManager()
-    private let isLoggedInKey = "isLoggedIn"
-    private init() {}
- 
-    func register(email: String, password: String) async throws -> Bool {
-        // Simulate network request
-        try await Task.sleep(nanoseconds: 1_500_000_000)
- 
-        // Example: throw if email already taken
-        // throw AuthError.emailAlreadyInUse
- 
-        return true
-    }
-    @MainActor
-    var isLoggedIn: Bool {
-            get {
-                UserDefaults.standard.bool(forKey: isLoggedInKey)
+        
+        private let isLoggedInKey = "isLoggedIn"
+        
+        @Published var isLoggedIn: Bool {
+            didSet {
+                UserDefaults.standard.set(isLoggedIn, forKey: isLoggedInKey)
             }
-            set {
-                UserDefaults.standard.set(newValue, forKey: isLoggedInKey)
-            }
-    }
+        }
+        
+        private init() {
+            self.isLoggedIn = UserDefaults.standard.bool(forKey: isLoggedInKey)
+        }
+        
+        // Simulated register
+        func register(email: String, password: String) async throws -> Bool {
+            try await Task.sleep(nanoseconds: 1_500_000_000)
+            return true
+        }
 
 }
  

@@ -56,7 +56,7 @@
 		DD8E724E2FA8F3C70005D254 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		DDB045CC2FA9B66F002EA282 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDB045D32FA9C13E002EA282 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
-		DDB045D52FA9DC12002EA282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DDB045D52FA9DC12002EA282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +104,13 @@
 		DD8E72362FA8D5050005D254 /* DisasesClassificationApp */ = {
 			isa = PBXGroup;
 			children = (
-				DDB045D52FA9DC12002EA282 /* Info.plist */,
 				DD8E724B2FA8EE350005D254 /* Constants */,
 				DD8E72462FA8ED050005D254 /* Authentication */,
 				DD8E723A2FA8D50B0005D254 /* Coordinator */,
 				DD8E72332FA8D5050005D254 /* Assets.xcassets */,
 				DD8E72342FA8D5050005D254 /* HomeView.swift */,
 				DD8E72352FA8D5050005D254 /* DiseasesClassificationAppApp.swift */,
+				DDB045D52FA9DC12002EA282 /* Info.plist */,
 				DDB045CC2FA9B66F002EA282 /* GoogleService-Info.plist */,
 			);
 			path = DisasesClassificationApp;
@@ -129,13 +129,9 @@
 		DD8E72462FA8ED050005D254 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				DD8E72472FA8ED330005D254 /* CreateAccountView.swift */,
-				DD8E72492FA8ED660005D254 /* CreateAccountViewModel.swift */,
-				DD8E724E2FA8F3C70005D254 /* AuthManager.swift */,
-				DD2885EB2FA98F2500176DC7 /* LoginView.swift */,
-				DD2885ED2FA98F6C00176DC7 /* LoginViewModel.swift */,
-				DD28860C2FA9A04D00176DC7 /* FirebaseAuthManager.swift */,
-				DDB045D32FA9C13E002EA282 /* GoogleSignInManager.swift */,
+				DDB045D82FA9FFCD002EA282 /* Manager */,
+				DDB045D72FA9FFB2002EA282 /* ViewModel */,
+				DDB045D62FA9FF92002EA282 /* View */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -146,6 +142,34 @@
 				DD8E724C2FA8F0220005D254 /* MangoTextField.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		DDB045D62FA9FF92002EA282 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD2885EB2FA98F2500176DC7 /* LoginView.swift */,
+				DD8E72472FA8ED330005D254 /* CreateAccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDB045D72FA9FFB2002EA282 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD2885ED2FA98F6C00176DC7 /* LoginViewModel.swift */,
+				DD8E72492FA8ED660005D254 /* CreateAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DDB045D82FA9FFCD002EA282 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DD8E724E2FA8F3C70005D254 /* AuthManager.swift */,
+				DDB045D32FA9C13E002EA282 /* GoogleSignInManager.swift */,
+				DD28860C2FA9A04D00176DC7 /* FirebaseAuthManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

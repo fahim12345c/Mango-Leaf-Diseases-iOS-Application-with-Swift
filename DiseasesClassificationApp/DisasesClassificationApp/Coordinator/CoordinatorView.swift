@@ -9,15 +9,18 @@ import SwiftUI
 
 struct CoordinatorView: View {
     @StateObject private var coordinator = Coordinator()
-    @State private var isLoggedIn = AuthManager.shared.isLoggedIn
+    @StateObject private var authManager = AuthManager.shared
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            Group{
-                if isLoggedIn {
-                    
-                }
-                else{
-                    coordinator.build(page: .loginView(viewModel: LoginViewModel(authManager: FirebaseAuthManager())))
+            Group {
+                if authManager.isLoggedIn {
+                    coordinator.build(page: .homeView)
+                } else {
+                    coordinator.build(
+                        page: .loginView(
+                            viewModel: LoginViewModel(authManager: FirebaseAuthManager())
+                        )
+                    )
                 }
             }
             .navigationDestination(for: Page.self) { page in
@@ -25,6 +28,7 @@ struct CoordinatorView: View {
             }
         }
         .environmentObject(coordinator)
+        .environmentObject(authManager)
 
         
     }

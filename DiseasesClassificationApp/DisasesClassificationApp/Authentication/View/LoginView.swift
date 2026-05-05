@@ -55,7 +55,7 @@ struct LoginView: View {
         .onChange(of: viewModel.authState) { state in
             if case .success = state {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    coordinator.replaceStack(with: .homeView)
+                    AuthManager.shared.isLoggedIn = true
                 }
             }
         }
