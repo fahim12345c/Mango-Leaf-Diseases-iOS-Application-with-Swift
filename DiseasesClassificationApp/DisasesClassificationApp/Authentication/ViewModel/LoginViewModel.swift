@@ -14,9 +14,6 @@ import UIKit
 @MainActor
 final class LoginViewModel: ObservableObject, Identifiable {
 
-    // MARK: - Identifiable
-    let id: UUID = UUID()
-
     // MARK: - Input Fields
     @Published var email: String = ""
     @Published var password: String = ""
@@ -148,7 +145,7 @@ final class LoginViewModel: ObservableObject, Identifiable {
             authState = .success
         } catch let error as GoogleSignInError {
             if case .cancelled = error { return }
-            authState = .failure(error.localizedDescription ?? "Google Sign-In failed.")
+            authState = .failure(error.localizedDescription)
         } catch let nsError as NSError {
             if nsError.code == 0 { return }
             authState = .failure(firebaseErrorMessage(nsError))

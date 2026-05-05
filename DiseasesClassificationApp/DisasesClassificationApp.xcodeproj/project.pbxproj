@@ -104,14 +104,13 @@
 		DD8E72362FA8D5050005D254 /* DisasesClassificationApp */ = {
 			isa = PBXGroup;
 			children = (
+				DDB045DB2FAA0517002EA282 /* Home */,
 				DD8E724B2FA8EE350005D254 /* Constants */,
 				DD8E72462FA8ED050005D254 /* Authentication */,
 				DD8E723A2FA8D50B0005D254 /* Coordinator */,
-				DD8E72332FA8D5050005D254 /* Assets.xcassets */,
-				DD8E72342FA8D5050005D254 /* HomeView.swift */,
+				DDB045D92FAA04A4002EA282 /* Info */,
+				DDB045DA2FAA04E5002EA282 /* Resources */,
 				DD8E72352FA8D5050005D254 /* DiseasesClassificationAppApp.swift */,
-				DDB045D52FA9DC12002EA282 /* Info.plist */,
-				DDB045CC2FA9B66F002EA282 /* GoogleService-Info.plist */,
 			);
 			path = DisasesClassificationApp;
 			sourceTree = "<group>";
@@ -170,6 +169,47 @@
 				DD28860C2FA9A04D00176DC7 /* FirebaseAuthManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		DDB045D92FAA04A4002EA282 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				DDB045D52FA9DC12002EA282 /* Info.plist */,
+				DDB045CC2FA9B66F002EA282 /* GoogleService-Info.plist */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		DDB045DA2FAA04E5002EA282 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD8E72332FA8D5050005D254 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DDB045DB2FAA0517002EA282 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DDB045DD2FAA0530002EA282 /* ViewModel */,
+				DDB045DC2FAA0528002EA282 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DDB045DC2FAA0528002EA282 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD8E72342FA8D5050005D254 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDB045DD2FAA0530002EA282 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
