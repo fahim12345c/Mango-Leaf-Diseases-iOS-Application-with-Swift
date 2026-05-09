@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDA658C02F000001003137CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA658BF2F000001003137CE /* LaunchScreen.storyboard */; };
 		DD2885EC2FA98F2500176DC7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2885EB2FA98F2500176DC7 /* LoginView.swift */; };
 		DD2885EE2FA98F6C00176DC7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2885ED2FA98F6C00176DC7 /* LoginViewModel.swift */; };
 		DD2885F12FA99AC500176DC7 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = DD2885F02FA99AC500176DC7 /* FirebaseAI */; };
@@ -33,6 +34,16 @@
 		DD8E724A2FA8ED660005D254 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E72492FA8ED660005D254 /* CreateAccountViewModel.swift */; };
 		DD8E724D2FA8F0220005D254 /* MangoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E724C2FA8F0220005D254 /* MangoTextField.swift */; };
 		DD8E724F2FA8F3C70005D254 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E724E2FA8F3C70005D254 /* AuthManager.swift */; };
+		DD92F8DA2FAB6ACB005EC045 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8D92FAB6ACB005EC045 /* WeatherModel.swift */; };
+		DD92F8DC2FAB820B005EC045 /* WeatherDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8DB2FAB820B005EC045 /* WeatherDisplayModel.swift */; };
+		DD92F8DE2FAB8252005EC045 /* FeatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8DD2FAB8252005EC045 /* FeatureModel.swift */; };
+		DD92F8E12FAB8308005EC045 /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8E02FAB8308005EC045 /* WeatherNetworkManager.swift */; };
+		DD92F8E32FAB837D005EC045 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8E22FAB837D005EC045 /* LocationManager.swift */; };
+		DD92F8E52FAB8F60005EC045 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8E42FAB8F60005EC045 /* WeatherViewModel.swift */; };
+		DD92F8E72FAB8FBE005EC045 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8E62FAB8FBE005EC045 /* HomeViewModel.swift */; };
+		DD92F8E92FAB903E005EC045 /* FeatureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8E82FAB903E005EC045 /* FeatureCardView.swift */; };
+		DD92F8EB2FAB907A005EC045 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8EA2FAB907A005EC045 /* MainTabView.swift */; };
+		DD92F8ED2FAC671E005EC045 /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92F8EC2FAC671E005EC045 /* WeatherCardView.swift */; };
 		DDB045CD2FA9B66F002EA282 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDB045CC2FA9B66F002EA282 /* GoogleService-Info.plist */; };
 		DDB045D02FA9BF56002EA282 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DDB045CF2FA9BF56002EA282 /* GoogleSignIn */; };
 		DDB045D22FA9BF56002EA282 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDB045D12FA9BF56002EA282 /* GoogleSignInSwift */; };
@@ -40,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DDA658BF2F000001003137CE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD2885EB2FA98F2500176DC7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD2885ED2FA98F6C00176DC7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DD28860C2FA9A04D00176DC7 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -54,9 +66,19 @@
 		DD8E72492FA8ED660005D254 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		DD8E724C2FA8F0220005D254 /* MangoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangoTextField.swift; sourceTree = "<group>"; };
 		DD8E724E2FA8F3C70005D254 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		DD92F8D92FAB6ACB005EC045 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DD92F8DB2FAB820B005EC045 /* WeatherDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDisplayModel.swift; sourceTree = "<group>"; };
+		DD92F8DD2FAB8252005EC045 /* FeatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureModel.swift; sourceTree = "<group>"; };
+		DD92F8E02FAB8308005EC045 /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
+		DD92F8E22FAB837D005EC045 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DD92F8E42FAB8F60005EC045 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		DD92F8E62FAB8FBE005EC045 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DD92F8E82FAB903E005EC045 /* FeatureCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCardView.swift; sourceTree = "<group>"; };
+		DD92F8EA2FAB907A005EC045 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		DD92F8EC2FAC671E005EC045 /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
+		DDA658BE2FAF0383003137CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDB045CC2FA9B66F002EA282 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDB045D32FA9C13E002EA282 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
-		DDB045D52FA9DC12002EA282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +165,25 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		DD92F8D82FAB6AB4005EC045 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD92F8D92FAB6ACB005EC045 /* WeatherModel.swift */,
+				DD92F8DD2FAB8252005EC045 /* FeatureModel.swift */,
+				DD92F8DB2FAB820B005EC045 /* WeatherDisplayModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD92F8DF2FAB82D1005EC045 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DD92F8E02FAB8308005EC045 /* WeatherNetworkManager.swift */,
+				DD92F8E22FAB837D005EC045 /* LocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		DDB045D62FA9FF92002EA282 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +215,8 @@
 		DDB045D92FAA04A4002EA282 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				DDB045D52FA9DC12002EA282 /* Info.plist */,
 				DDB045CC2FA9B66F002EA282 /* GoogleService-Info.plist */,
+				DDA658BE2FAF0383003137CE /* Info.plist */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -184,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8E72332FA8D5050005D254 /* Assets.xcassets */,
+				DDA658BF2F000001003137CE /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -191,6 +233,8 @@
 		DDB045DB2FAA0517002EA282 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DD92F8DF2FAB82D1005EC045 /* Manager */,
+				DD92F8D82FAB6AB4005EC045 /* Model */,
 				DDB045DD2FAA0530002EA282 /* ViewModel */,
 				DDB045DC2FAA0528002EA282 /* View */,
 			);
@@ -201,6 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				DD8E72342FA8D5050005D254 /* HomeView.swift */,
+				DD92F8E82FAB903E005EC045 /* FeatureCardView.swift */,
+				DD92F8EA2FAB907A005EC045 /* MainTabView.swift */,
+				DD92F8EC2FAC671E005EC045 /* WeatherCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +255,8 @@
 		DDB045DD2FAA0530002EA282 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DD92F8E42FAB8F60005EC045 /* WeatherViewModel.swift */,
+				DD92F8E62FAB8FBE005EC045 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8E72372FA8D5050005D254 /* Assets.xcassets in Resources */,
+				DDA658C02F000001003137CE /* LaunchScreen.storyboard in Resources */,
 				DDB045CD2FA9B66F002EA282 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,14 +357,24 @@
 				DD8E72402FA8D5A10005D254 /* Page.swift in Sources */,
 				DD8E72442FA8DABE0005D254 /* CoordinatorView.swift in Sources */,
 				DD2885EE2FA98F6C00176DC7 /* LoginViewModel.swift in Sources */,
+				DD92F8E72FAB8FBE005EC045 /* HomeViewModel.swift in Sources */,
 				DD8E724A2FA8ED660005D254 /* CreateAccountViewModel.swift in Sources */,
+				DD92F8EB2FAB907A005EC045 /* MainTabView.swift in Sources */,
 				DDB045D42FA9C13E002EA282 /* GoogleSignInManager.swift in Sources */,
 				DD8E724F2FA8F3C70005D254 /* AuthManager.swift in Sources */,
+				DD92F8DC2FAB820B005EC045 /* WeatherDisplayModel.swift in Sources */,
 				DD8E72482FA8ED330005D254 /* CreateAccountView.swift in Sources */,
+				DD92F8E32FAB837D005EC045 /* LocationManager.swift in Sources */,
+				DD92F8E12FAB8308005EC045 /* WeatherNetworkManager.swift in Sources */,
+				DD92F8ED2FAC671E005EC045 /* WeatherCardView.swift in Sources */,
 				DD28860D2FA9A04D00176DC7 /* FirebaseAuthManager.swift in Sources */,
 				DD8E72382FA8D5050005D254 /* HomeView.swift in Sources */,
+				DD92F8DE2FAB8252005EC045 /* FeatureModel.swift in Sources */,
 				DD8E72392FA8D5050005D254 /* DiseasesClassificationAppApp.swift in Sources */,
+				DD92F8DA2FAB6ACB005EC045 /* WeatherModel.swift in Sources */,
+				DD92F8E52FAB8F60005EC045 /* WeatherViewModel.swift in Sources */,
 				DD8E723C2FA8D5280005D254 /* Coordinator.swift in Sources */,
+				DD92F8E92FAB903E005EC045 /* FeatureCardView.swift in Sources */,
 				DD2885EC2FA98F2500176DC7 /* LoginView.swift in Sources */,
 				DD8E724D2FA8F0220005D254 /* MangoTextField.swift in Sources */,
 			);
@@ -450,13 +510,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DisasesClassificationApp/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/DisasesClassificationApp/Info/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,13 +543,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DisasesClassificationApp/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/DisasesClassificationApp/Info/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -19,61 +19,63 @@ struct LoginView: View {
     @State private var formOffset: CGFloat = 30
  
     var body: some View {
-        ZStack {
-            // MARK: Background
-            MangoTheme.background
-                .ignoresSafeArea()
- 
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 0) {
-                    headerCard
-                        .scaleEffect(headerScale)
-                        .padding(.horizontal, 20)
-                        .padding(.top, 8)
- 
-                    formSection
-                        .opacity(formOpacity)
-                        .offset(y: formOffset)
-                        .padding(.horizontal, 20)
-                        .padding(.top, 28)
- 
-                    footerLink
-                        .opacity(formOpacity)
-                        .padding(.top, 24)
-                        .padding(.bottom, 40)
+        GeometryReader { geometry in
+            ZStack {
+                // MARK: Background
+                MangoTheme.background
+                    .ignoresSafeArea()
+                
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        headerCard
+                            .scaleEffect(headerScale)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 8)
+                        
+                        formSection
+                            .opacity(formOpacity)
+                            .offset(y: formOffset)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 28)
+                        
+                        footerLink
+                            .opacity(formOpacity)
+                            .padding(.top, 24)
+                            .padding(.bottom, 40)
+                    }
+                }
+                
+                // MARK: Overlays
+                if viewModel.authState == .loading { loadingOverlay }
+                if viewModel.authState == .success { successOverlay }
+            }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) { backButton }
+            }
+            .onChange(of: viewModel.authState) { state in
+                if case .success = state {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        AuthManager.shared.isLoggedIn = true
+                    }
                 }
             }
- 
-            // MARK: Overlays
-            if viewModel.authState == .loading { loadingOverlay }
-            if viewModel.authState == .success { successOverlay }
-        }
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) { backButton }
-        }
-        .onChange(of: viewModel.authState) { state in
-            if case .success = state {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    AuthManager.shared.isLoggedIn = true
+            .onAppear {
+                withAnimation(.spring(response: 0.6, dampingFraction: 0.75).delay(0.1)) {
+                    headerScale = 1.0
+                }
+                withAnimation(.easeOut(duration: 0.5).delay(0.35)) {
+                    formOpacity = 1
+                    formOffset = 0
                 }
             }
-        }
-        .onAppear {
-            withAnimation(.spring(response: 0.6, dampingFraction: 0.75).delay(0.1)) {
-                headerScale = 1.0
+            .alert(item: alertItem) { item in
+                Alert(
+                    title: Text("Login Failed"),
+                    message: Text(item.message),
+                    dismissButton: .default(Text("OK")) { viewModel.resetState() }
+                )
             }
-            withAnimation(.easeOut(duration: 0.5).delay(0.35)) {
-                formOpacity = 1
-                formOffset = 0
-            }
-        }
-        .alert(item: alertItem) { item in
-            Alert(
-                title: Text("Login Failed"),
-                message: Text(item.message),
-                dismissButton: .default(Text("OK")) { viewModel.resetState() }
-            )
         }
     }
  
