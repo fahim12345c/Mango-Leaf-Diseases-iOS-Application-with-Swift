@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DDA658C02F000001003137CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA658BF2F000001003137CE /* LaunchScreen.storyboard */; };
+		DDA658C22F000010003137CE /* ChatHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA658C12F000010003137CE /* ChatHomeView.swift */; };
+		DDA658C42F000011003137CE /* WeatherFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA658C32F000011003137CE /* WeatherFeatureView.swift */; };
+		DDA658C62F000012003137CE /* WeatherFeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA658C52F000012003137CE /* WeatherFeatureViewModel.swift */; };
+		DDA658C82F000013003137CE /* SprayingCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA658C72F000013003137CE /* SprayingCalculator.swift */; };
+		DDA658CA2F000014003137CE /* SprayingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA658C92F000014003137CE /* SprayingModels.swift */; };
+		DDA658CC2F000015003137CE /* WeatherLegendSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA658CB2F000015003137CE /* WeatherLegendSheetView.swift */; };
 		DD2885EC2FA98F2500176DC7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2885EB2FA98F2500176DC7 /* LoginView.swift */; };
 		DD2885EE2FA98F6C00176DC7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2885ED2FA98F6C00176DC7 /* LoginViewModel.swift */; };
 		DD2885F12FA99AC500176DC7 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = DD2885F02FA99AC500176DC7 /* FirebaseAI */; };
@@ -52,6 +58,12 @@
 
 /* Begin PBXFileReference section */
 		DDA658BF2F000001003137CE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDA658C12F000010003137CE /* ChatHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHomeView.swift; sourceTree = "<group>"; };
+		DDA658C32F000011003137CE /* WeatherFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFeatureView.swift; sourceTree = "<group>"; };
+		DDA658C52F000012003137CE /* WeatherFeatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFeatureViewModel.swift; sourceTree = "<group>"; };
+		DDA658C72F000013003137CE /* SprayingCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprayingCalculator.swift; sourceTree = "<group>"; };
+		DDA658C92F000014003137CE /* SprayingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprayingModels.swift; sourceTree = "<group>"; };
+		DDA658CB2F000015003137CE /* WeatherLegendSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLegendSheetView.swift; sourceTree = "<group>"; };
 		DD2885EB2FA98F2500176DC7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DD2885ED2FA98F6C00176DC7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DD28860C2FA9A04D00176DC7 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -126,6 +138,8 @@
 		DD8E72362FA8D5050005D254 /* DisasesClassificationApp */ = {
 			isa = PBXGroup;
 			children = (
+				DDA658CD2F000020003137CE /* Weather */,
+				DDA658CE2F000021003137CE /* Chat */,
 				DDB045DB2FAA0517002EA282 /* Home */,
 				DD8E724B2FA8EE350005D254 /* Constants */,
 				DD8E72462FA8ED050005D254 /* Authentication */,
@@ -135,6 +149,66 @@
 				DD8E72352FA8D5050005D254 /* DiseasesClassificationAppApp.swift */,
 			);
 			path = DisasesClassificationApp;
+			sourceTree = "<group>";
+		};
+		DDA658CD2F000020003137CE /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				DDA658CF2F000022003137CE /* Manager */,
+				DDA658D02F000023003137CE /* Model */,
+				DDA658D12F000024003137CE /* ViewModel */,
+				DDA658D22F000025003137CE /* View */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		DDA658CF2F000022003137CE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DDA658C72F000013003137CE /* SprayingCalculator.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DDA658D02F000023003137CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDA658C92F000014003137CE /* SprayingModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDA658D12F000024003137CE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DDA658C52F000012003137CE /* WeatherFeatureViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DDA658D22F000025003137CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDA658C32F000011003137CE /* WeatherFeatureView.swift */,
+				DDA658CB2F000015003137CE /* WeatherLegendSheetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDA658CE2F000021003137CE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DDA658D32F000026003137CE /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		DDA658D32F000026003137CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDA658C12F000010003137CE /* ChatHomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DD8E723A2FA8D50B0005D254 /* Coordinator */ = {
@@ -354,6 +428,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA658C22F000010003137CE /* ChatHomeView.swift in Sources */,
+				DDA658C42F000011003137CE /* WeatherFeatureView.swift in Sources */,
+				DDA658C62F000012003137CE /* WeatherFeatureViewModel.swift in Sources */,
+				DDA658C82F000013003137CE /* SprayingCalculator.swift in Sources */,
+				DDA658CA2F000014003137CE /* SprayingModels.swift in Sources */,
+				DDA658CC2F000015003137CE /* WeatherLegendSheetView.swift in Sources */,
 				DD8E72402FA8D5A10005D254 /* Page.swift in Sources */,
 				DD8E72442FA8DABE0005D254 /* CoordinatorView.swift in Sources */,
 				DD2885EE2FA98F6C00176DC7 /* LoginViewModel.swift in Sources */,

@@ -15,15 +15,15 @@ import SwiftUI
 enum AppTab: Int, CaseIterable {
     case home
     case weather
+    case chat
     case diseases
-    case profile
 
     var title: String {
         switch self {
         case .home:     return "Home"
         case .weather:  return "Weather"
+        case .chat:     return "Chat"
         case .diseases: return "Diseases"
-        case .profile:  return "Profile"
         }
     }
 
@@ -31,8 +31,8 @@ enum AppTab: Int, CaseIterable {
         switch self {
         case .home:     return "house.fill"
         case .weather:  return "cloud.sun.fill"
+        case .chat:     return "message.fill"
         case .diseases: return "camera.fill"
-        case .profile:  return "person.fill"
         }
     }
 }
@@ -47,34 +47,34 @@ struct MainTabView: View {
     // Coordinator callbacks
     var onDiseaseScannerTap: (() -> Void)? = nil
     var onCommunityTap: (() -> Void)? = nil
+    
+    private let brandGreen = Color(red: 0.18, green: 0.55, blue: 0.34)
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            // Tab content
-            TabView(selection: $selectedTab) {
-                HomeView(
-                    userName: userName,
-                    onDiseaseScannerTap: { selectedTab = .diseases },
-                    onCommunityTap: onCommunityTap, onWeatherTap: { selectedTab = .weather },
-                    onProfileTap: { selectedTab = .profile }
-                )
-                .tag(AppTab.home)
+        TabView(selection: $selectedTab) {
+            HomeView(
+                userName: userName,
+                onDiseaseScannerTap: { selectedTab = .diseases },
+                onCommunityTap: onCommunityTap,
+                onWeatherTap: { selectedTab = .weather },
+                onProfileTap: nil
+            )
+            .tag(AppTab.home)
 
-                WeatherFullView()
-                    .tag(AppTab.weather)
+            WeatherFeatureView()
+                .tag(AppTab.weather)
 
-                DiseasesScannerView()
-                    .tag(AppTab.diseases)
+            ChatHomeView()
+                .tag(AppTab.chat)
 
-                ProfileView(userName: userName)
-                    .tag(AppTab.profile)
-            }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-
-            // Custom Tab Bar
+            DiseasesScannerView()
+                .tag(AppTab.diseases)
+        }
+        // Avoid .page style; it can break programmatic selection for custom tab bars.
+        .tabViewStyle(.automatic)
+        .safeAreaInset(edge: .bottom) {
             customTabBar
         }
-        .ignoresSafeArea(edges: .bottom)
     }
 
     // MARK: - Custom Tab Bar
@@ -86,11 +86,17 @@ struct MainTabView: View {
                 Spacer()
             }
         }
-        .padding(.top, 12)
-        .padding(.bottom, 28)
+        .padding(.top, 10)
+        .padding(.bottom, 10)
         .background(
             Color(.systemBackground)
-                .shadow(color: .black.opacity(0.08), radius: 16, x: 0, y: -4)
+                .overlay(
+                    Rectangle()
+                        .fill(.black.opacity(0.06))
+                        .frame(height: 1),
+                    alignment: .top
+                )
+                .shadow(color: .black.opacity(0.10), radius: 18, x: 0, y: -6)
         )
     }
 
@@ -104,75 +110,38 @@ struct MainTabView: View {
                 ZStack {
                     if selectedTab == tab {
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(Color("agriGreen").opacity(0.15))
+                            .fill(brandGreen.opacity(0.18))
                             .frame(width: 48, height: 32)
                     }
                     Image(systemName: tab.icon)
                         .font(.system(size: 20, weight: selectedTab == tab ? .bold : .regular))
-                        .foregroundColor(selectedTab == tab ? Color("agriGreen") : Color.gray.opacity(0.6))
+                        .foregroundColor(selectedTab == tab ? brandGreen : Color.gray.opacity(0.65))
                 }
                 Text(tab.title)
                     .font(.system(size: 11, weight: selectedTab == tab ? .semibold : .regular))
-                    .foregroundColor(selectedTab == tab ? Color("agriGreen") : Color.gray.opacity(0.6))
+                    .foregroundColor(selectedTab == tab ? brandGreen : Color.gray.opacity(0.65))
             }
         }
+        .buttonStyle(.plain)
         .animation(.spring(response: 0.3, dampingFraction: 0.7), value: selectedTab)
-    }
-}
-
-// MARK: - Placeholder tab screens (replace with your real views)
-
-struct WeatherFullView: View {
-    var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Weather Detail")
-                    .font(.title)
-                    .foregroundColor(Color("agriGreen"))
-            }
-            .navigationTitle("Weather")
-        }
     }
 }
 
 struct DiseasesScannerView: View {
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 20) {
-                Image(systemName: "camera.viewfinder")
-                    .font(.system(size: 64))
-                    .foregroundColor(Color("agriGreen"))
-                Text("Disease Scanner")
-                    .font(.title2.bold())
-                Text("Integrate your mango leaf classification model here")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
-            }
-            .navigationTitle("Diseases")
+        VStack(spacing: 20) {
+            Image(systemName: "camera.viewfinder")
+                .font(.system(size: 64))
+                .foregroundColor(Color(red: 0.18, green: 0.55, blue: 0.34))
+            Text("Disease Scanner")
+                .font(.title2.bold())
+            Text("Integrate your mango leaf classification model here")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 40)
         }
-    }
-}
-
-struct ProfileView: View {
-    var userName: String
-    var body: some View {
-        NavigationStack {
-            VStack(spacing: 16) {
-                Circle()
-                    .fill(Color("agriGreen").opacity(0.15))
-                    .frame(width: 80, height: 80)
-                    .overlay(
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 36))
-                            .foregroundColor(Color("agriGreen"))
-                    )
-                Text(userName)
-                    .font(.title3.bold())
-            }
-            .navigationTitle("Profile")
-        }
+        .padding(.top, 30)
     }
 }
 

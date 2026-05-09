@@ -52,7 +52,7 @@ extension Coordinator {
         switch page{
         case .createAccountView(let viewModel) : CreateAccountView(viewModel: viewModel)
         case .loginView(let viewModel): LoginView(viewModel: viewModel)
-        case .homeView: HomeView()
+        case .homeView: MainTabView()
             
         }
     }
